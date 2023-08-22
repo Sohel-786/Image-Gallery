@@ -11,6 +11,11 @@ function Gallery({list}) {
                     })
                 }
             </div>
+
+            <div>
+                <button>Prev</button>
+                <button>Next</button>
+            </div>
         </main>
     )
 }

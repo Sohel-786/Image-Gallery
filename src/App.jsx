@@ -22,17 +22,7 @@ function App() {
       });
       
         const { photos }= Info.data;
-
-        let clearTimer = setInterval(() => {
-        
-              setData((d) => {
-                if(d.length === 19){
-                    clearInterval(clearTimer);
-                }
-                  return [...d, photos[d.length]];
-              })
-
-        }, 500);
+        setData(photos);
       
     }catch(err){
       return console.log(err.message);
@@ -41,13 +31,12 @@ function App() {
 
    function handleNextpage(){
         setOffset(offset + 20);
-        setData([]);
+        
    }
 
    function handlePrevpage(){
     if(offset !== 0){
       setOffset(offset - 20);
-      setData([]);
     }
 }
 

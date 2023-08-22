@@ -18,9 +18,9 @@ function Gallery({list, next, prev}) {
                 }
             </div>
 
-            <div>
-                <button onClick={prev}>Prev</button>
-                <button onClick={next}>Next</button>
+            <div className='btn'>
+                <button className='button-85' onClick={prev}>Prev</button>
+                <button className='button-85' onClick={next}>Next</button>
             </div>
         </main>
     )

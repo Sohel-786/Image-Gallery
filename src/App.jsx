@@ -23,16 +23,15 @@ function App() {
       
         const { photos }= Info.data;
 
-        let count = 0;
-        let id = setInterval(() => {
-            console.log('sohel', count, id);
-            if(count < 20){  
-              setData([...data, photos[count]])
-              console.log(data);
-              count++;
-            }else{
-                clearInterval(id);
-            }
+        let clearTimer = setInterval(() => {
+        
+              setData((d) => {
+                if(d.length === 19){
+                    clearInterval(clearTimer);
+                }
+                  return [...d, photos[d.length]];
+              })
+
         }, 500);
       
     }catch(err){

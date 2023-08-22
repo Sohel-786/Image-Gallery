@@ -44,9 +44,16 @@ function App() {
         setData([]);
    }
 
+   function handlePrevpage(){
+    if(offset !== 0){
+      setOffset(offset - 20);
+      setData([]);
+    }
+}
+
   return (
     <>
-       { data && <Gallery next={handleNextpage}  list={data}/>}
+       { data && <Gallery prev={handlePrevpage} next={handleNextpage}  list={data}/>}
     </>  
   )
 }

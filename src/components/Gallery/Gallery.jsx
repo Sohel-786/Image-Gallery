@@ -1,7 +1,7 @@
 import './gallery.css'
 import Card from "../Card/Card";
 
-function Gallery({list, next}) {
+function Gallery({list, next, prev}) {
 
 
     return (
@@ -19,7 +19,7 @@ function Gallery({list, next}) {
             </div>
 
             <div>
-                <button>Prev</button>
+                <button onClick={prev}>Prev</button>
                 <button onClick={next}>Next</button>
             </div>
         </main>

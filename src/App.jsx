@@ -7,17 +7,26 @@ function App() {
 
   const [data, setData] = useState();
   const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(1);
+
+  useEffect(() =>{
+      setTimeout(()=>{
+          if(limit < 20){
+            setLimit((l) => l + 1);
+          }
+      }, 500)
+  }, [limit])
 
   useEffect(() =>{
     handleImageFetching();
-  }, [])
+  }, [limit]);
 
   async function handleImageFetching(){
     try{
         const Info = await AxiosInstance.get('/', {
           params : {
             offset : {offset},
-            limit : 20
+            limit
           }
         });
 

@@ -5,12 +5,9 @@ import Gallery from './components/Gallery/Gallery';
 
 function App() {
 
-  let photos;
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(0);
 
-  
   useEffect(() =>{
     handleImageFetching();
   }, []);
@@ -24,25 +21,24 @@ function App() {
         }
       });
       
-      photos = Info.data.photos;
-      setData([...data, photos[0]])
+        const { photos }= Info.data;
+
+        let count = 0;
+        let id = setInterval(() => {
+            console.log('sohel', count, id);
+            if(count < 20){  
+              setData([...data, photos[count]])
+              console.log(data);
+              count++;
+            }else{
+                clearInterval(id);
+            }
+        }, 500);
       
     }catch(err){
       return console.log(err.message);
     }
   } 
-
-  useEffect(() =>{
-      setTimeout(()=>{
-          if(limit < 20){
-            photos &&   
-              setLimit((l) => l + 1);
-              console.log(photos[limit]);
-              setData([...data, {...photos[limit]}]);
-            
-          }
-      }, 500)
-  }, [limit])
 
   return (
     <>

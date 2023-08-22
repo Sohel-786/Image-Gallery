@@ -10,13 +10,13 @@ function App() {
 
   useEffect(() =>{
     handleImageFetching();
-  }, []);
+  }, [offset]);
   
   async function handleImageFetching(){
     try{
       const Info = await AxiosInstance.get('/', {
         params : {
-          offset : {offset},
+          offset : offset,
           limit : 20
         }
       });
@@ -39,9 +39,14 @@ function App() {
     }
   } 
 
+   function handleNextpage(){
+        setOffset(offset + 20);
+        setData([]);
+   }
+
   return (
     <>
-       { data && <Gallery  list={data}/>}
+       { data && <Gallery next={handleNextpage}  list={data}/>}
     </>  
   )
 }

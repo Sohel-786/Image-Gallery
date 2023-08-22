@@ -5,7 +5,7 @@ import Gallery from './components/Gallery/Gallery';
 
 function App() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [offset, setOffset] = useState(0);
 
   useEffect(() =>{
@@ -22,8 +22,8 @@ function App() {
         });
 
         const { photos } = Info.data;
-        
-        console.log(photos);
+        setData(photos);
+
     }catch(err){
         return console.log(err.message);
     }
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-        {/* <Gallery /> */}
+       { data && <Gallery  list={data}/>}
     </>  
   )
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { AxiosInstance } from './utils/axiosInstance'
+import { AxiosInstance } from './utils/axiosInstance'  // Instance of Axios
 import Gallery from './components/Gallery/Gallery';
 import ImageDetails from './components/ImageDetails/ImageDetails';
 import { Route, Routes } from 'react-router-dom';

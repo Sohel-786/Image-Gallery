@@ -1,8 +1,21 @@
-# React + Vite
+# Image Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Home Page & Details Page
 
-Currently, two official plugins are available:
+![Home](public/githubReadme/homepage.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Details](public/githubReadme/detailpage.png)
+
+
+### WEBSITE USER FLOW >
+
+    User can view photos from the gallery and user can view the details also of any particular image on another page just through clicking on any image.
+
+----
+
+### STEPS TO START THE APP LOCALLY >
+> [!NOTE]
+
+> The Todos created by user will be stored in db.json file, only start the json-server first - command 
+
+> json-server --watch --port 3001 db.json

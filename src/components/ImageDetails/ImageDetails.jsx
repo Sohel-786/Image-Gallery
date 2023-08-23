@@ -7,6 +7,7 @@ function ImageDetails(){
     
     const {id} = useParams();
     const [details, setDetails] = useState();
+    const [error , setError] = useState(false);
     
     useEffect(() =>{
         downloadDetails();
@@ -16,20 +17,9 @@ function ImageDetails(){
 
         const detail = await AxiosInstance.get(`/${id}`);
 
-        if(!detail.status === 200){
-            return (
-                <div>
-                    <h1>Internal Server Error</h1>
-                </div>
-            )
-        }
-
-        if(!detail.data.success){
-            return (
-                <div>
-                    <h1>404 Not Found</h1>
-                </div>
-            )
+        if(detail.data.photo === null){
+            setError(true);
+            return;
         }
 
         const { photo } = detail.data;
@@ -41,6 +31,16 @@ function ImageDetails(){
             url : photo.url
         });
     }
+
+    if(error){
+
+        return (
+            <div style={{textAlign : 'center'}}>
+                <h2>404 Not Found</h2>
+            </div>
+        )
+    }
+
     return(
             <>
                 { details && <div className='info_container'>

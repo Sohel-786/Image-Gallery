@@ -4,13 +4,13 @@
     align-items: center;
     width: 88%;
     padding: 50px;
-    margin: 40px 70px;
+    margin: 35px 70px;
     background-color: #0e2253;
 }
 
 .info_container > div:nth-child(1){
-    width: 50%;
-    height: 500px;
+    width: 55%;
+    height: 450px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -21,11 +21,20 @@
 }
 
 .info_container > div:nth-child(2){
-    width: 50%;
+    width: 45%;
     padding-left: 40px;
     color: white;
 }
 
 .info_container > div:nth-child(2) h2{
     margin-bottom: 25px;
+    font-size: 29px;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.info_container > div:nth-child(2) p{
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+    color: #ebebeb;
 }

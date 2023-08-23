@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { AxiosInstance } from './utils/axiosInstance'
 import Gallery from './components/Gallery/Gallery';
+import ImageDetails from './components/ImageDetails/ImageDetails';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -42,7 +44,15 @@ function App() {
 
   return (
     <>
-       { data && <Gallery prev={handlePrevpage} next={handleNextpage}  list={data}/>}
+
+      <Routes>
+          <Route path='/'  element={ data && <Gallery offset={offset} prev={handlePrevpage} next={handleNextpage}  list={data}/>} />
+
+          <Route path='details/:id' element={<ImageDetails />}/>
+          <Route path='*' element={<h2>Page Not Found</h2>}/>
+          
+      </Routes>
+       
     </>  
   )
 }

@@ -91,3 +91,10 @@ h1{
     line-height: 50px;
   }
 }
+
+.button-75:disabled{
+  border : 2px solid rgb(255, 0, 0);
+  background-image: none;
+  color: black;
+  cursor:not-allowed;
+}

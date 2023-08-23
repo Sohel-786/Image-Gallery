@@ -11,7 +11,7 @@
 
 ----
 
-    User can view photos from the gallery and user can view the details also of any particular image on another page just through clicking on any image.
+  * User can view photos from the gallery and user can view the details also of any particular image on another page just through clicking on any image.
 
 
 ### STEPS TO START THE APP LOCALLY >
